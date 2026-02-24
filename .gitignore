@@ -1,0 +1,81 @@
+# ----------------------------
+# Secrets / env
+# ----------------------------
+.env
+.env.*
+!.env.example
+
+# ----------------------------
+# Docker / Compose
+# ----------------------------
+docker-compose.override.yml
+**/docker-compose.override.yml
+
+# Local bind-mounted data directories (если вдруг решишь хранить данные не в volume)
+data/
+db-data/
+pgdata/
+postgres-data/
+pgadmin-data/
+
+# ----------------------------
+# pgAdmin (если будет локальная папка, не volume)
+# ----------------------------
+pgadmin/
+pgadmin_storage/
+
+# ----------------------------
+# Flyway
+# ----------------------------
+# Flyway может создавать локальные логи/репорты (если настроишь)
+flyway.log
+flyway-reports/
+flyway-*.txt
+
+# ----------------------------
+# OS junk
+# ----------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ----------------------------
+# IDE / Editors
+# ----------------------------
+.vscode/
+.idea/
+*.iml
+
+# ----------------------------
+# Logs / temp
+# ----------------------------
+*.log
+*.tmp
+*.swp
+*.swo
+
+# ----------------------------
+# Archives
+# ----------------------------
+*.zip
+*.tar
+*.tar.gz
+
+# ----------------------------
+# Node / Python (на всякий случай, если появятся)
+# ----------------------------
+node_modules/
+dist/
+build/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ----------------------------
+# SQL dumps / exports
+# ----------------------------
+*.dump
+*.sql.gz
+*.bak
