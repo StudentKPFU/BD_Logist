@@ -1,59 +1,26 @@
 services:
   postgres:
-    image: postgres:16
-    container_name: postgres
+    image: postgres:17
+    container_name: logist_db_container
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpassword
+      POSTGRES_DB: LogistDB
     ports:
-      - "15432:5432"
+      - "5433:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - logist_network
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
+      - pgdata:/var/lib/postgresql/data
 
   pgadmin:
-    image: dpage/pgadmin4:8
-    container_name: pgadmin
+    image: dpage/pgadmin4
+    container_name: pgadmin_container
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
     ports:
-      - "9000:80"
+      - "5050:80"
     depends_on:
       - postgres
-    networks:
-      - logist_network
-    volumes:
-      - pgadmin_data:/var/lib/pgadmin
-
-  flyway:
-    image: flyway/flyway:10.17.0
-    container_name: flyway
-    command: migrate
-    volumes:
-      - ./migrations:/flyway/sql
-    environment:
-      FLYWAY_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB}
-      FLYWAY_USER: ${POSTGRES_USER}
-      FLYWAY_PASSWORD: ${POSTGRES_PASSWORD}
-      FLYWAY_SCHEMAS: public
-    depends_on:
-      postgres:
-        condition: service_healthy
-    networks:
-      - logist_network
 
 volumes:
-  postgres_data:
-  pgadmin_data:
-
-networks:
-  logist_network:
-    driver: bridge
+  pgdata:
