@@ -59,3 +59,42 @@ FROM pg_ls_waldir();
 
 <img width="172" height="73" alt="Снимок экрана 2026-03-18 в 00 45 36" src="https://github.com/user-attachments/assets/18f99b82-fd39-4852-9f7c-d2f706a4b5ad" />
 
+# Дамп
+
+Дамп только структуры, файл приложен
+
+``` bash
+pg_dump -h localhost -p 5432 -U postgres -d " LogistDB" --schema-only > db_schema.sql
+```
+
+Дамп одной таблицы, файл приложен
+
+``` bash
+pg_dump -h localhost -p 5432 -U postgres -d " LogistDB" -t "cargos" --schema-only > table_dump.sql
+```
+
+# seed, просто через sql код
+
+добавление тестовых данных 
+
+``` sql
+INSERT INTO clients(name)
+SELECT 'user_' || n
+FROM generate_series(1, 1000) AS n;
+```
+
+проверка идемпотентности seed (ON CONFLICT и др)
+
+``` sql
+INSERT INTO client_contacts (client_id, phone, email, address)
+VALUES 
+(3, '+7-495-123-45-67', 'info@romashka.ru', 'Москва, ул. Ленина, 1'),
+(4, '+7-495-765-43-21', 'ivanov@mail.ru', 'Москва, ул. Тверская, 10'),
+(5, '+7-495-111-22-33', 'tech@technopark.ru', 'СПб, Невский пр., 20')
+ON CONFLICT (client_id) DO NOTHING;
+```
+
+``` sql
+INSERT INTO clients (client_id, name) VALUES (1, 'Новое имя')
+ON CONFLICT (client_id) DO UPDATE SET name = EXCLUDED.name;
+```
