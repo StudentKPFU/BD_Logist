@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HW_themes.md",
+                "file": "HW6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HW_themes"
+              "title": "HW6"
             }
           }
         ]
@@ -183,24 +183,26 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "819f4a7c160ebbfc",
+  "active": "13e111bf778b11de",
   "lastOpenFiles": [
+    "img/Снимок экрана 2026-05-19 в 21.29.59.png",
+    "HW6.md",
+    "img/Снимок экрана 2026-05-19 в 21.30.13.png",
+    "docker-compose-logical~.yml",
+    "docker-compose-logical.yml",
+    "img/Снимок экрана 2026-05-19 в 21.06.15.png",
+    "img/Снимок экрана 2026-05-19 в 21.05.06.png",
+    "img/Снимок экрана 2026-05-19 в 21.06.47.png",
+    "img/Снимок экрана 2026-05-19 в 21.06.36.png",
+    "HW_themes.md",
     "img/Снимок экрана 2026-05-06 в 08.32.14.png",
     "img/Снимок экрана 2026-05-06 в 08.31.17.png",
-    "img/Снимок экрана 2026-05-06 в 08.31.02.png",
-    "img/Снимок экрана 2026-05-06 в 02.54.10.png",
+    "img/Снимок экрана 2026-05-06 в 02.26.19.png",
+    "img/Снимок экрана 2026-05-06 в 02.26.33.png",
     "qdrant-homework/docker-compose.yml",
     "qdrant-homework/script.py",
     "qdrant-homework/requirements.txt",
     "qdrant-homework",
-    "img/Снимок экрана 2026-05-06 в 02.24.47.png",
-    "img/Снимок экрана 2026-05-06 в 02.24.36.png",
-    "img/Снимок экрана 2026-05-06 в 02.24.22.png",
-    "img/Снимок экрана 2026-05-06 в 02.22.53.png",
-    "HW_themes.md",
-    "img/Снимок экрана 2026-05-06 в 02.22.23.png",
-    "img/Снимок экрана 2026-05-06 в 02.22.00.png",
-    "img/Снимок экрана 2026-05-06 в 02.03.19.png",
     "postgres_backup.sql",
     "logistdb_dump.sql"
   ]
