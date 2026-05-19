@@ -1,49 +1,11 @@
-version: '3.8'
-
 services:
-  # Главный сервер (для п.1), он же Publisher (для п.3), он же Маршрутизатор (для п.4)
-  router:
+  queue_db:
     image: postgres:16
-    container_name: router
-    command: ["postgres", "-c", "wal_level=logical"]
+    container_name: queue_db
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
-      POSTGRES_DB: hw_db
+      POSTGRES_DB: logist_db
       POSTGRES_HOST_AUTH_METHOD: trust
-
-  # Физическая реплика (для п.2)
-  phys_replica:
-    image: postgres:16
-    container_name: phys_replica
-    environment:
-      POSTGRES_HOST_AUTH_METHOD: trust
-    # Автоматически делает бэкап с роутера при старте
-    command: >
-      bash -c "
-      sleep 5 &&
-      rm -rf /var/lib/postgresql/data/* &&
-      pg_basebackup -h router -D /var/lib/postgresql/data -U admin -w -R &&
-      docker-entrypoint.sh postgres"
-    depends_on:
-      - router
-
-  # Шард 1 (он же Subscriber для п.3)
-  shard1:
-    image: postgres:16
-    container_name: shard1
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: hw_db
-      POSTGRES_HOST_AUTH_METHOD: trust
-
-  # Шард 2
-  shard2:
-    image: postgres:16
-    container_name: shard2
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: hw_db
-      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5434:5432"

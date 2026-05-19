@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HW7.md",
+                "file": "HW8.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HW7"
+              "title": "HW8"
             }
           }
         ]
@@ -183,11 +183,12 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "819f4a7c160ebbfc",
+  "active": "13e111bf778b11de",
   "lastOpenFiles": [
+    "img/Снимок экрана 2026-05-20 в 02.40.31.png",
     "img/Снимок экрана 2026-05-20 в 00.56.43.png",
+    "HW8.md",
     "img/Снимок экрана 2026-05-20 в 00.50.55.png",
-    "HW7.md",
     "img/Снимок экрана 2026-05-20 в 00.08.24.png",
     "img/Снимок экрана 2026-05-19 в 23.57.25.png",
     "img/Снимок экрана 2026-05-19 в 21.30.13.png",
@@ -199,7 +200,6 @@
     "img/Снимок экрана 2026-05-19 в 21.06.47.png",
     "img/Снимок экрана 2026-05-19 в 21.06.36.png",
     "HW_themes.md",
-    "img/Снимок экрана 2026-05-06 в 08.32.14.png",
     "qdrant-homework/docker-compose.yml",
     "qdrant-homework/script.py",
     "qdrant-homework/requirements.txt",
