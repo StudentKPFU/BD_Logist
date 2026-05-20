@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HW8.md",
+                "file": "HW9.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HW8"
+              "title": "HW9"
             }
           }
         ]
@@ -183,11 +183,14 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "13e111bf778b11de",
+  "active": "819f4a7c160ebbfc",
   "lastOpenFiles": [
+    "img/Снимок экрана 2026-05-20 в 04.08.09.png",
+    "img/Снимок экрана 2026-05-20 в 04.07.19.png",
+    "img/Снимок экрана 2026-05-20 в 04.06.33.png",
     "img/Снимок экрана 2026-05-20 в 02.40.31.png",
+    "HW9.md",
     "img/Снимок экрана 2026-05-20 в 00.56.43.png",
-    "HW8.md",
     "img/Снимок экрана 2026-05-20 в 00.50.55.png",
     "img/Снимок экрана 2026-05-20 в 00.08.24.png",
     "img/Снимок экрана 2026-05-19 в 23.57.25.png",
@@ -196,9 +199,6 @@
     "docker-compose-logical~.yml",
     "docker-compose-logical.yml",
     "img/Снимок экрана 2026-05-19 в 21.06.15.png",
-    "img/Снимок экрана 2026-05-19 в 21.05.06.png",
-    "img/Снимок экрана 2026-05-19 в 21.06.47.png",
-    "img/Снимок экрана 2026-05-19 в 21.06.36.png",
     "HW_themes.md",
     "qdrant-homework/docker-compose.yml",
     "qdrant-homework/script.py",
